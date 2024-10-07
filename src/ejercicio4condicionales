@@ -1,0 +1,47 @@
+import java.util.Scanner;
+import java.util.Locale;  // Importar Locale para manejar decimales correctamente
+
+public class ejercicio4condicionales {
+
+    public static void main(String[] args) {
+        // Establecer el Locale para que reconozca el punto decimal
+        Locale.setDefault(Locale.US);
+
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner sc = new Scanner(System.in);
+
+        // Solicitar el peso y la altura del usuario
+        System.out.println("Introduce tu peso en kilogramos:");
+        double peso = sc.nextDouble();  // Leer el peso
+
+        System.out.println("Introduce tu altura en centímetros (por ejemplo, 175):");
+        double alturaCm = sc.nextDouble();  // Leer la altura en centímetros
+
+        // Convertir la altura de centímetros a metros
+        double altura = alturaCm / 100;
+
+        // Imprimir los valores ingresados para verificar
+        System.out.println("Peso ingresado: " + peso + " kg");
+        System.out.println("Altura ingresada: " + alturaCm + " centímetros");
+
+        // Calcular el IMC
+        double imc = peso / (altura * altura);
+
+        // Imprimir el valor del IMC
+        System.out.printf("Tu Índice de Masa Corporal (IMC) es: %.2f\n", imc);
+
+        // Determinar la categoría del IMC y dar una recomendación
+        if (imc < 18.5) {
+            System.out.println("Recomendación: Estás en la categoría de bajo peso. Es recomendable consultar a un especialista.");
+        } else if (imc >= 18.5 && imc < 24.9) {
+            System.out.println("Recomendación: Tienes un peso normal. Sigue manteniendo un estilo de vida saludable.");
+        } else if (imc >= 25 && imc < 29.9) {
+            System.out.println("Recomendación: Estás en la categoría de sobrepeso. Es recomendable cuidar la dieta y hacer ejercicio.");
+        } else if (imc >= 30) {
+            System.out.println("Recomendación: Estás en la categoría de obesidad. Es importante buscar orientación médica.");
+        }
+
+        // Cerrar el objeto Scanner
+        sc.close();
+    }
+}
