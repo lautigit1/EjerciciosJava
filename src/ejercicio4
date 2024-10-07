@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class GeneradorPlaylist {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir al usuario su estado de ánimo
+        System.out.println("¿Cómo te sentís? (feliz, triste, enérgico, relajado)");
+        String estadoAnimo = scanner.nextLine().toLowerCase();
+
+        // Generar la lista de reproducción según el estado de ánimo
+        System.out.println("Tu lista de reproducción para estar " + estadoAnimo + " es:");
+
+        switch (estadoAnimo) {
+            case "feliz":
+                System.out.println("- Dance The Night - Dua Lipa");
+                System.out.println("- Levitating - Dua Lipa");
+                System.out.println("- As It Was - Harry Styles");
+                System.out.println("- Blinding Lights - The Weeknd");
+                break;
+
+            case "triste":
+                System.out.println("- Drivers License - Olivia Rodrigo");
+                System.out.println("- Someone Like You - Adele");
+                System.out.println("- Lose You To Love Me - Selena Gomez");
+                System.out.println("- Easy On Me - Adele");
+                break;
+
+            case "enérgico":
+                System.out.println("- Industry Baby - Lil Nas X, Jack Harlow");
+                System.out.println("- Montero (Call Me By Your Name) - Lil Nas X");
+                System.out.println("- Savage Love - Jawsh 685, Jason Derulo");
+                System.out.println("- Can't Hold Us - Macklemore & Ryan Lewis");
+                break;
+
+            case "relajado":
+                System.out.println("- Watermelon Sugar - Harry Styles");
+                System.out.println("- Golden Hour - JVKE");
+                System.out.println("- Slow Dancing In A Burning Room - John Mayer");
+                System.out.println("- July - Noah Cyrus");
+                break;
+
+            default:
+                System.out.println("No tengo canciones para ese estado de ánimo.");
+                break;
+        }
+    }
+}
