@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class ejercicio6condicionales {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar las horas de sueño
+        System.out.println("¿Cuántas horas al día duermes?");
+        int horasSueno = scanner.nextInt();
+
+        // Solicitar las horas de ejercicio
+        System.out.println("¿Cuántas horas al día haces ejercicio?");
+        int horasEjercicio = scanner.nextInt();
+
+        // Solicitar la cantidad de comidas saludables
+        System.out.println("¿Cuántas comidas saludables consumes al día?");
+        int comidasSaludables = scanner.nextInt();
+
+        // Evaluar los hábitos saludables
+        String evaluacion = evaluarHabitos(horasSueno, horasEjercicio, comidasSaludables);
+
+        // Imprimir la evaluación
+        System.out.println(evaluacion);
+
+        scanner.close();
+    }
+
+    public static String evaluarHabitos(int horasSueno, int horasEjercicio, int comidasSaludables) {
+        // Evaluación del sueño
+        String evaluacionSueno = (horasSueno >= 7 && horasSueno <= 9) ? "bueno" : "mejorable";
+
+        // Evaluación del ejercicio
+        String evaluacionEjercicio = (horasEjercicio >= 1) ? "adecuado" : "insuficiente";
+
+        // Evaluación de la alimentación
+        String evaluacionAlimentacion = (comidasSaludables >= 3) ? "buena" : "insuficiente";
+
+        // Generar un mensaje final de evaluación
+        return "Tu evaluación de hábitos saludables:\n" +
+                "- Sueño: " + evaluacionSueno + " (Duermes " + horasSueno + " horas al día)\n" +
+                "- Ejercicio: " + evaluacionEjercicio + " (Haces " + horasEjercicio + " horas de ejercicio al día)\n" +
+                "- Alimentación: " + evaluacionAlimentacion + " (Consumes " + comidasSaludables + " comidas saludables al día)";
+    }
+}
