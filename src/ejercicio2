@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class ejercicio2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar peso, duración del ejercicio y tipo de ejercicio
+        System.out.print("Introduce tu peso en kilogramos: ");
+        double peso = scanner.nextDouble();
+
+        System.out.print("Introduce la duración del ejercicio en minutos: ");
+        int minutos = scanner.nextInt();
+
+        System.out.print("Introduce el tipo de ejercicio (correr, nadar, bicicleta): ");
+        String ejercicio = scanner.next().toLowerCase(); // Convertir a minúsculas para comparar
+
+        // Definir las calorías quemadas por minuto según el ejercicio
+        double caloriasPorMinuto = 0;
+
+        switch (ejercicio) {
+            case "correr":
+                caloriasPorMinuto = 0.0175 * 9.8 * peso;
+                break;
+            case "nadar":
+                caloriasPorMinuto = 0.0175 * 8.3 * peso;
+                break;
+            case "bicicleta":
+                caloriasPorMinuto = 0.0175 * 7.5 * peso;
+                break;
+            default:
+                System.out.println("Tipo de ejercicio no reconocido.");
+                return; // Termina el programa si el ejercicio no es válido
+        }
+
+        // Calcular el total de calorías quemadas
+        double caloriasQuemadas = caloriasPorMinuto * minutos;
+
+        // Mostrar el resultado
+        System.out.printf("Has quemado aproximadamente %.2f calorías.\n", caloriasQuemadas);
+    }
+}
