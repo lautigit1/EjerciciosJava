@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class ejercicio7condicionales {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar al usuario su estado de ánimo
+        System.out.println("¿Cómo te sientes hoy? (feliz, triste, enérgico, relajado):");
+        String estadoAnimo = scanner.nextLine().toLowerCase();
+
+        // Determinar la recomendación basada en el estado de ánimo
+        String recomendacion = recomendarActividad(estadoAnimo);
+
+        // Mostrar la recomendación
+        System.out.println(recomendacion);
+
+        scanner.close();
+    }
+
+    public static String recomendarActividad(String estadoAnimo) {
+        switch (estadoAnimo) {
+            case "feliz":
+                return "¡Genial! Te recomendamos disfrutar de una caminata al aire libre o escuchar tu música favorita.";
+            case "triste":
+                return "Lo siento que te sientas así. Quizás te ayude ver una película reconfortante o hablar con un amigo cercano.";
+            case "enérgico":
+                return "¡Aprovecha esa energía! Podrías hacer ejercicio intenso como correr, practicar algún deporte o bailar.";
+            case "relajado":
+                return "Aprovecha la calma. Disfruta de un buen libro, medita o toma un baño caliente.";
+            default:
+                return "No he entendido tu estado de ánimo. Por favor, elige entre: feliz, triste, enérgico o relajado.";
+        }
+    }
+}
