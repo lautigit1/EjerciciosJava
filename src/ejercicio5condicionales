@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class ejercicio5condicionales {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        // Solicitar al usuario que elija entre piedra, papel o tijera
+        System.out.println("Elige: piedra, papel o tijera:");
+        String eleccionUsuario = scanner.nextLine().toLowerCase();
+
+        // Generar una opción aleatoria para el programa
+        String[] opciones = {"piedra", "papel", "tijera"};
+        String eleccionComputadora = opciones[random.nextInt(3)];
+
+        // Mostrar la elección de la computadora
+        System.out.println("La computadora eligió: " + eleccionComputadora);
+
+        // Determinar el resultado del juego
+        if (eleccionUsuario.equals(eleccionComputadora)) {
+            System.out.println("Empate");
+        } else if ((eleccionUsuario.equals("piedra") && eleccionComputadora.equals("tijera")) ||
+                (eleccionUsuario.equals("papel") && eleccionComputadora.equals("piedra")) ||
+                (eleccionUsuario.equals("tijera") && eleccionComputadora.equals("papel"))) {
+            System.out.println("¡Ganaste!");
+        } else if ((eleccionUsuario.equals("piedra") && eleccionComputadora.equals("papel")) ||
+                (eleccionUsuario.equals("papel") && eleccionComputadora.equals("tijera")) ||
+                (eleccionUsuario.equals("tijera") && eleccionComputadora.equals("piedra"))) {
+            System.out.println("Perdiste");
+        } else {
+            System.out.println("Opción inválida. Por favor elige entre piedra, papel o tijera.");
+        }
+
+        scanner.close();
+    }
+}
