@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ejercicio5{
+public class ejercicio5secuenciales{
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
