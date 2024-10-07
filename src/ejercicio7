@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class ejercicio7 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir los factores de felicidad al usuario
+        System.out.println("En una escala del 1 al 10, ¿cuál es tu nivel de satisfacción con la vida?");
+        int satisfaccionVida = scanner.nextInt();
+
+        System.out.println("En una escala del 1 al 10, ¿cuál es tu nivel de estrés?");
+        int estres = scanner.nextInt();
+
+        System.out.println("En una escala del 1 al 10, ¿cuál es tu nivel de salud?");
+        int salud = scanner.nextInt();
+
+        System.out.println("En una escala del 1 al 10, ¿cuál es tu nivel de relaciones personales?");
+        int relacionesPersonales = scanner.nextInt();
+
+        System.out.println("En una escala del 1 al 10, ¿cuál es tu nivel de bienestar emocional?");
+        int bienestarEmocional = scanner.nextInt();
+
+        // Calcular el índice de felicidad (promedio de los factores)
+        double indiceFelicidad = (satisfaccionVida + (10 - estres) + salud + relacionesPersonales + bienestarEmocional) / 5.0;
+
+        // Mostrar el índice de felicidad
+        System.out.printf("Tu índice de felicidad es: %.2f\n", indiceFelicidad);
+
+        // Interpretación del índice
+        if (indiceFelicidad >= 8) {
+            System.out.println("¡Estás re bien con tu vida! :)");
+        } else if (indiceFelicidad >= 5) {
+            System.out.println("Estás re tranqui.");
+        } else {
+            System.out.println("Estas muy triste, a mejorar que todo se puede. :(");
+        }
+    }
+}
