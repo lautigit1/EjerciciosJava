@@ -1,15 +1,106 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+import java.util.Scanner;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+public class ejercicio1 {
+    public static void main(String[] args) {
+        String horoscopo = "";
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Este programa le dirá cuál es su horóscopo a partir de su fecha de nacimiento.");
+        System.out.print("Introduzca el número del mes en que nació (1-12): ");
+        int mes = sc.nextInt();
+
+        System.out.print("Ahora introduzca el día: ");
+        int dia = sc.nextInt();
+
+        switch(mes) {
+            case 1:
+                if (dia < 21) {
+                    horoscopo = "capricornio";
+                } else {
+                    horoscopo = "acuario";
+                }
+                break;
+            case 2:
+                if (dia < 20) {
+                    horoscopo = "acuario";
+                } else {
+                    horoscopo = "piscis";
+                }
+                break;
+            case 3:
+                if (dia < 21) {
+                    horoscopo = "piscis";
+                } else {
+                    horoscopo = "aries";
+                }
+                break;
+            case 4:
+                if (dia < 21) {
+                    horoscopo = "aries";
+                } else {
+                    horoscopo = "tauro";
+                }
+                break;
+            case 5:
+                if (dia < 20) {
+                    horoscopo = "tauro";
+                } else {
+                    horoscopo = "géminis";
+                }
+                break;
+            case 6:
+                if (dia < 22) {
+                    horoscopo = "géminis";
+                } else {
+                    horoscopo = "cáncer";
+                }
+                break;
+            case 7:
+                if (dia < 22) {
+                    horoscopo = "cáncer";
+                } else {
+                    horoscopo = "leo";
+                }
+                break;
+            case 8:
+                if (dia < 24) {
+                    horoscopo = "leo";
+                } else {
+                    horoscopo = "virgo";
+                }
+                break;
+            case 9:
+                if (dia < 23) {
+                    horoscopo = "virgo";
+                } else {
+                    horoscopo = "libra";
+                }
+                break;
+            case 10:
+                if (dia < 23) {
+                    horoscopo = "libra";
+                } else {
+                    horoscopo = "escorpio";
+                }
+                break;
+            case 11:
+                if (dia < 23) {
+                    horoscopo = "escorpio";
+                } else {
+                    horoscopo = "sagitario";
+                }
+                break;
+            case 12:
+                if (dia < 21) {
+                    horoscopo = "sagitario";
+                } else {
+                    horoscopo = "capricornio";
+                }
+                break;
+            default:
+                horoscopo = "Fecha inválida";
         }
+
+        System.out.println("Su horóscopo es " + horoscopo);
     }
 }
