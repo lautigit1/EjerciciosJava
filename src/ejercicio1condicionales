@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ejercicio1cond {
+public class ejercicio1condicionales {
 
     public static void main(String[] args) {
         // Crear un objeto Scanner para leer la entrada del usuario
