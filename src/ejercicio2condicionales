@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class ejercicio2condicionales {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner sc = new Scanner(System.in);
+
+        // Solicitar el precio del producto
+        System.out.println("Introduce el precio del producto:");
+        double precio = sc.nextDouble();  // Leer el precio
+
+        // Solicitar la categoría del cliente
+        System.out.println("Introduce tu categoría (estudiante, adulto, jubilado):");
+        sc.nextLine();  // Limpiar el buffer del Scanner
+        String categoria = sc.nextLine().toLowerCase();  // Leer y convertir a minúsculas
+
+        // Declarar el descuento
+        double descuento = 0;
+
+        // Calcular el descuento según la categoría
+        if (categoria.equals("estudiante")) {
+            descuento = 0.10;  // 10% de descuento
+        } else if (categoria.equals("adulto")) {
+            descuento = 0.05;  // 5% de descuento
+        } else if (categoria.equals("jubilado")) {
+            descuento = 0.15;  // 15% de descuento
+        } else {
+            System.out.println("Categoría no válida. No se aplicará descuento.");
+        }
+
+        // Calcular el precio final
+        double precioFinal = precio - (precio * descuento);
+
+        // Imprimir el precio final
+        System.out.printf("El precio final después del descuento es: %.2f\n", precioFinal);
+
+        // Cerrar el objeto Scanner
+        sc.close();
+    }
+}
