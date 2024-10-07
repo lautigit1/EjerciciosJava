@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class ejercicio1cond {
+
+    public static void main(String[] args) {
+        // Crear un objeto Scanner para leer la entrada del usuario
+        Scanner sc = new Scanner(System.in);
+
+        // Solicitar al usuario su género de película favorito
+        System.out.println("Introduce tu género de película favorito (acción, comedia, drama, ciencia ficción):");
+        String genero = sc.nextLine().toLowerCase();  // Convertir a minúsculas para evitar problemas con mayúsculas/minúsculas
+
+        // Recomendación basada en la elección del usuario
+        if (genero.equals("acción")) {
+            System.out.println("Te recomiendo ver: 'John Wick: Chapter 4' (2023).");
+        } else if (genero.equals("comedia")) {
+            System.out.println("Te recomiendo ver: 'No Hard Feelings' (2023).");
+        } else if (genero.equals("drama")) {
+            System.out.println("Te recomiendo ver: 'Oppenheimer' (2023).");
+        } else if (genero.equals("ciencia ficción")) {
+            System.out.println("Te recomiendo ver: 'Dune: Part Two' (2023).");
+        } else {
+            System.out.println("Lo siento, no reconozco ese género.");
+        }
+
+        // Cerrar el objeto Scanner
+        sc.close();
+    }
+}
