@@ -1,0 +1,62 @@
+import java.util.Scanner;
+
+public class ejercicio3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Solicitar el nivel de condición física
+        System.out.print("Introduce tu nivel de condición física (principiante, intermedio, avanzado): ");
+        String nivel = scanner.next().toLowerCase(); // Convertir a minúsculas para facilitar la comparación
+
+        // Generar la rutina de ejercicios dependiendo del nivel
+        switch (nivel) {
+            case "principiante":
+                rutinaPrincipiante();
+                break;
+            case "intermedio":
+                rutinaIntermedia();
+                break;
+            case "avanzado":
+                rutinaAvanzada();
+                break;
+            default:
+                System.out.println("Nivel no reconocido. Por favor, introduce 'principiante', 'intermedio' o 'avanzado'.");
+        }
+    }
+
+    // Rutina para nivel principiante
+    public static void rutinaPrincipiante() {
+        System.out.println("Rutina para Principiante:");
+        System.out.println("Lunes: 20 minutos de caminar + 10 minutos de estiramientos.");
+        System.out.println("Martes: 15 minutos de trotar suave + 10 minutos de ejercicios de fuerza (peso corporal).");
+        System.out.println("Miércoles: Descanso o 20 minutos de yoga.");
+        System.out.println("Jueves: 20 minutos de caminar + 15 minutos de estiramientos.");
+        System.out.println("Viernes: 15 minutos de trotar suave + 10 minutos de ejercicios de fuerza (peso corporal).");
+        System.out.println("Sábado: 30 minutos de andar en bicicleta o nadar.");
+        System.out.println("Domingo: Descanso.");
+    }
+
+    // Rutina para nivel intermedio
+    public static void rutinaIntermedia() {
+        System.out.println("Rutina para Intermedio:");
+        System.out.println("Lunes: 30 minutos de trotar + 15 minutos de ejercicios de fuerza.");
+        System.out.println("Martes: 40 minutos de andar en bicicleta o nadar.");
+        System.out.println("Miércoles: 20 minutos de correr + 20 minutos de ejercicios de fuerza.");
+        System.out.println("Jueves: 30 minutos de trotar + 15 minutos de estiramientos.");
+        System.out.println("Viernes: 45 minutos de andar en bicicleta o nadar.");
+        System.out.println("Sábado: 20 minutos de correr a ritmo medio + 20 minutos de ejercicios de fuerza.");
+        System.out.println("Domingo: Descanso o estiramientos ligeros.");
+    }
+
+    // Rutina para nivel avanzado
+    public static void rutinaAvanzada() {
+        System.out.println("Rutina para Avanzado:");
+        System.out.println("Lunes: 45 minutos de correr a ritmo medio + 30 minutos de ejercicios de fuerza.");
+        System.out.println("Martes: 60 minutos de andar en bicicleta o nadar.");
+        System.out.println("Miércoles: 40 minutos de correr a ritmo alto + 20 minutos de fuerza intensa.");
+        System.out.println("Jueves: 45 minutos de entrenamiento HIIT + 20 minutos de estiramientos.");
+        System.out.println("Viernes: 60 minutos de andar en bicicleta o nadar.");
+        System.out.println("Sábado: 30 minutos de correr a ritmo alto + 30 minutos de fuerza intensa.");
+        System.out.println("Domingo: Descanso activo o yoga.");
+    }
+}
