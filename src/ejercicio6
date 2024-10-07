@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class ejercicio6 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir al usuario cuántas horas puede estudiar al día
+        System.out.println("¿Cuántas horas al día podés estudiar?");
+        int horasPorDia = scanner.nextInt();
+
+        // Materias de Ingeniería en Sistemas que se van a distribuir
+        String[] materias = {
+                "Programación",
+                "Bases de Datos",
+                "Sistemas Operativos",
+                "Redes",
+                "Ingeniería de Software",
+                "Algoritmos"
+        };
+
+        // Calcular la cantidad de horas por materia a la semana
+        int horasSemanales = horasPorDia * 7;  // Total de horas en la semana
+        int horasPorMateria = horasSemanales / materias.length;
+        int horasRestantes = horasSemanales % materias.length;
+
+        // Mostrar el plan de estudio
+        System.out.println("\nTu plan de estudio semanal es el siguiente:");
+
+        for (int i = 0; i < materias.length; i++) {
+            // Asignar las horas por materia, con horas adicionales si hay resto
+            int horasAsignadas = horasPorMateria;
+            if (i < horasRestantes) {
+                horasAsignadas++;  // Distribuir las horas restantes
+            }
+            System.out.println(materias[i] + ": " + horasAsignadas + " horas a la semana.");
+        }
+    }
+}
